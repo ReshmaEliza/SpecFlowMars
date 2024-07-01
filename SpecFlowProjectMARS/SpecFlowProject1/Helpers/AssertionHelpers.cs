@@ -103,6 +103,7 @@ namespace SpecFlowMVPMARS.Helpers
             IList<IWebElement> TableElements = driver.FindElements(By.XPath("//div[@data-tab='first']//td[1]"));
             int count = TableElements.Count();
             List<string> table_languages = new List<string>();
+            Console.WriteLine($"Notification from Sysem:{notification}");
 
             foreach (IWebElement element in TableElements)
             {
@@ -115,8 +116,7 @@ namespace SpecFlowMVPMARS.Helpers
                 int l = language.Length;
                 if (l > 50)
                 {
-                    Console.WriteLine($"Notification from Sysem:{notification}");
-                    Assert.Fail("System Allowed the addition of Characters >50");
+                    Assert.Fail("System Allowed the addition of Characters > 50");
                 }
                
 
